@@ -38,7 +38,7 @@ body , html {
 }
 .header {
     
-    background-color:steelblue;
+    background-color:deepskyblue;
     grid-area: header;
     border: 1px solid rgba(176,196,222,0.8);
     box-shadow: 2px 2px  rgba(176,196,222,0.8);
@@ -76,6 +76,7 @@ body , html {
    text-decoration: none;
    font-size: 15px;
    max-width: 15px;
+   font-family: "Noto Sans JP";
 }
 .main-content {
 
@@ -91,7 +92,7 @@ body , html {
     widows: 200px; ;
     height:300px ;
     margin: 25px auto;
-    background-color:rgba(200, 211, 224, 0.8);
+    background-color:rgba(200, 211, 224, 0.8);  
     border: 1px solid rgba(176, 196, 222, 0.8);
     box-shadow: 0px 0px 7px 3px gray ;
     z-index: 1;

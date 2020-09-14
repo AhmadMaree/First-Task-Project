@@ -1,25 +1,25 @@
 
 var _main_card = document.getElementById("main-content");
 var _main_bar = document.getElementById ("main-bar");
- 
+var _user_name = document.getElementById ("username-header");
 /* Event when page is Load  */
 window.onload = function () {
     
   
-    //getAllData();
+    
 
     getCountries().then( (response) => {
         console.log(response); 
-        for( var i=0 ; i< response.length ; i++) {
+        for( let i=0 ; i< response.length ; i++) {
 
             
 
-            var _card_DIV = document.createElement('div');
+           let _card_DIV = document.createElement('div');
              _card_DIV.className = "card";
              _card_DIV.id=response[i].name;
-             var _card_img = document.createElement('img');
+            let _card_img = document.createElement('img');
              _card_img.className = "card-image";
-             var _card_name = document.createElement('h3');
+             let _card_name = document.createElement('h3');
              _card_name.className = "card-name";
              _card_name.innerHTML=response[i].name; 
              _card_img.src=response[i].flag.svgFile;
@@ -28,13 +28,13 @@ window.onload = function () {
              _card_DIV.appendChild(_card_name);
             
              //for Bar menu 
-            var _main_bar_content = document.createElement('div');
+            let _main_bar_content = document.createElement('div');
             _main_bar_content.className= "main-bar-content" ;
-            var _main_bar_name = document.createElement('h3');
-            var _img_icon_bar =document.createElement('img');
+           let _main_bar_name = document.createElement('h3');
+           let _img_icon_bar =document.createElement('img');
             _img_icon_bar.src= "/Images/forward.png";
             _img_icon_bar.alt= "fd.png";
-            var _anchor = document.createElement("a")
+            let _anchor = document.createElement("a")
             _anchor.href="#" + response[i].name;
             _anchor.textContent=response[i].name;
 
@@ -53,10 +53,10 @@ window.onload = function () {
            console.log('fetch failed', err);
     });
 
-
+      get_User();
 }
 
-/* anthor Way to get Data from object Promies */
+/* anthor Way to get Data from object Promies 
 async function getAllData () { 
     try {
         const response = await getCountries ();
@@ -66,6 +66,21 @@ async function getAllData () {
         console.log('fetch failed', err);
       }
 } 
+
+
+/*getusername*/
+
+const get_User= function () {
+ // let user_name = document.location.search.replace(/^.*?\=/,'');
+  
+  /* for local storge */ 
+  let user_name = localStorage.getItem("username");
+  console.log(user_name);
+  _user_name.textContent=user_name;
+
+
+}
+
 
 /* Function fetch API */
 function getCountries() {
