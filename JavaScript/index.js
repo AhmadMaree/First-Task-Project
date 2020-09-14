@@ -13,7 +13,7 @@ let loginPage = `
 let secPage = ` 
 <header class="header">
     <!-- its just for overviwe later we will fetch data and change it--> 
-    <h2 class="username-header">Username</h2>
+    <h2  class="username-header">Username</h2>
 </header>
 <nav class="main-bar" id="main-bar">
    
