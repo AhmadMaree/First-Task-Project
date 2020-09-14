@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP");
+
+* {
+    box-sizing: border-box;
+
+}
+
+
+
+body , html {
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-page {
+
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 15% auto;
+    grid-template-areas: "header header"
+                         "bar cards";
+
+    grid-row-gap: 2px;
+    
+}
+
+.main-bar,
+.header
+{
+    padding: 3px;
+    text-align: center;
+   
+
+}
+.header {
+    
+    background-color:steelblue;
+    grid-area: header;
+    border: 1px solid rgba(176,196,222,0.8);
+    box-shadow: 2px 2px  rgba(176,196,222,0.8);
+}
+.header > h2 {
+    font-family: "Noto Sans JP";
+    color:  rgba(255,255,255,1);
+    font-size: 1.3em;
+    font-style: normal;
+    font-size: 30px;
+    
+}
+.main-bar{
+
+    background-color:rgba(176,196,222,0.8);
+    grid-area: bar;
+    border: 1px solid rgba(176,196,222,0.8);
+}
+.main-bar-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.main-bar-content img {
+
+    width: 10px;
+    height: 10px;
+    
+}
+.main-bar-content a {
+
+   color:  rgba(0,0,0,.8);
+   text-decoration: none;
+   font-size: 15px;
+   max-width: 15px;
+}
+.main-content {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    grid-area: cards;
+    
+}
+.card {
+    widows: 200px; ;
+    height:300px ;
+    margin: 25px auto;
+    background-color:rgba(200, 211, 224, 0.8);
+    border: 1px solid rgba(176, 196, 222, 0.8);
+    box-shadow: 0px 0px 7px 3px gray ;
+    z-index: 1;
+}
+.card :hover {
+    filter: brightness(1.4);
+}
+.card-image{
+    width: 200px;
+    height: 200px;
+    border-bottom: 1px solid rgba(176, 196, 222, 0.8);
+}
+.card-name {
+    text-align: center;
+}
