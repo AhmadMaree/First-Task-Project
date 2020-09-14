@@ -1,21 +1,20 @@
 
 
-var btn = document.getElementById("login-submit");
-var user_name = document.getElementById("login-username");
+var btn = document.getElementsByClassName("login-submit");
+var user_name = document.getElementsByClassName("login-username");
 
 
 
+    
 
-document.addEventListener('DOMContentLoaded', function () {
-    btn.addEventListener("click" , function () {
+    btn[0].addEventListener("click" , function () {
 
-        localStorage.setItem("username", user_name.value);
+        localStorage.setItem("username", user_name[0].value);
         window.document.location= '../Main.html' ;
        // window.document.location= '../Main.html'+ '?username='+user_name.value;
     
     });
     
-});
 
 
 /* anthor way using LocalStorge */ 
