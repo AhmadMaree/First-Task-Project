@@ -1,22 +1,59 @@
 
+let loginPage = `
+<div class="container-login">
+    <form name="login-form" class= "login-form" > 
+            
+        <span>Account Login</span>
+        <input class="login-username" type="text" name="user-login" placeholder="UserName" required>
+        <input class ="login-submit" type="submit" name = "btn-login" title="Submit"/>
+    </form>
+</div>
+`;
 
-var btn = document.getElementsByClassName("login-submit");
-var user_name = document.getElementsByClassName("login-username");
+let secPage = ` 
+<header class="header">
+    <!-- its just for overviwe later we will fetch data and change it--> 
+    <h2 class="username-header">Username</h2>
+</header>
+<nav class="main-bar" id="main-bar">
+   
+    
+</nav>
+<main class ="main-content" id="main-content">
+    
+</main>
+`;
 
+let btn = document.getElementsByClassName("login-submit");
 
+let user_name = null ;
 
     
+(function () {
 
-    btn[0].addEventListener("click" , function () {
+    let div =  document.createElement("div");
+    div.className= "box";
+    div.innerHTML= loginPage;
+    document.body.appendChild(div);
+   
 
-        localStorage.setItem("username", user_name[0].value);
-       //  window.document.location= '../Main.html' ;
-       // window.document.location= '../Main.html'+ '?username='+user_name.value;
-    
-    });
-    
-
-
-/* anthor way using LocalStorge */ 
+})();
 
 
+btn[0].addEventListener("click" , function () {
+
+     user_name = document.getElementsByClassName("login-username")[0];
+
+    if(user_name != null ) {
+     
+    let div = document.createElement("div");
+    div.className="main-page";
+    div.innerHTML=secPage ;
+    document.body.removeChild(document.getElementsByClassName("box")[0]);
+    document.body.appendChild(div);
+    document.getElementsByClassName("username-header")[0].innerHTML= user_name.value;
+    }
+
+    secPage_result();
+
+});
